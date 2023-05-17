@@ -1,0 +1,160 @@
+<html>
+
+<head>
+    <title>Calculatore sium</title>
+    <script src="misure.js"></script>
+    <script src="script.js"></script>
+    <script src="wiki.js"></script>
+    <script src="random.js"></script>
+    <script src="eroi.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        @media only screen and (max-device-width: 480px) {
+            .shorter {
+                width: 100%;
+            }
+        }
+
+        @media only screen and (min-device-width: 481px) {
+            .shorter {
+                width: 60%;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" name="form">
+        <button type="button" onclick="randomIb(form)">Random</button>
+        <p>
+            Generazione:
+            <select name="gen" id="gen" onchange="wiki(form)">
+                <option value=0>1</option>
+                <option value=1>2</option>
+                <option value=2>3</option>
+                <option value=3>4</option>
+                <option value=4>5</option>
+            </select>
+        </p>
+
+        <p>
+            Drago:
+            <select name="drago" id="dragosel" onchange="wiki(form)">
+                <option value=0>Comune</option>
+                <option value=1>Fuoco</option>
+                <option value=2>Veleno</option>
+                <option value=3>Oppio</option>
+                <option value=4>Acido</option>
+                <option value=5>Elettrico</option>
+            </select>
+        </p>
+
+        <p>
+            Ali:
+            <select name="alidim" id="alidim" onchange="wiki(form)">
+                <option value="20">Piccole</option>
+                <option value="60">Medie</option>
+                <option value="15">Grandi</option>
+                <option value="5">Molto grandi</option>
+            </select>
+            e
+            <select name="alitra" id="alitra" onchange="wiki(form)">
+                <option value="60">Opache</option>
+                <option value="40">Trasparenti</option>
+            </select>
+        </p>
+
+        <p>
+            Coda:
+            <select name="codalong" id="codalong" onchange="wiki(form)">
+                <option value="30">Corta</option>
+                <option value="50">Lunga</option>
+                <option value="20">Molto lunga</option>
+            </select>
+            e
+            <select name="codawide" id="codawide" onchange="wiki(form)">
+                <option value="30">Grossa</option>
+                <option value="40">Fine</option>
+                <option value="30b">Molto fine</option>
+            </select>
+        </p>
+
+        <p>
+            <select name="nmuta" id="nmuta" onchange="wiki2(form)">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+            </select>
+            Mutazioni:
+        </p>
+        <p id="mutlist">
+
+        </p>
+    </form>
+    <p><b>Rarità: </b><span id="tot"></span></p>
+
+    <button type="button" onclick="hide('misure', 'wiki', 'eroi')">Vedi info</button>
+    <button type="button" onclick="hide('wiki', 'misure', 'eroi')">Vedi scheda ibrido</button>
+    <button type="button" onclick="hide('wiki', 'eroi', 'misure')">Vedi eroi</button>
+
+    <div class="shorter hidden" name="misure" id="misure">
+        <br>
+        <button type="button" onclick="measures()">Genera nuovo ibrido</button>
+        <h3>Soggetto n° <span id="soggetto"></span></h3>
+        <p><b><span id="ngenerazione"></span>a Generazione</b></p>
+        <p><b>Tipo del drago donatore: </b><span id="nomedrago"></span></p>
+        <p><b>Altezza: </b><span id="altezza"></span></p>
+        <p><b>Peso: </b><span id="peso"></span></p>
+        <p><b>Ali: </b><span id="dimensioniali"></span> e <span id="traspali"></span></p>
+        <p><b>Apertura alare: </b><span id="apAlare"></span></p>
+        <p><b>Altezza ali: </b><span id="altezzaAli"></span></p>
+        <p><b>Coda: </b><span id="lunghezzacoda"></span> e <span id="diametrocoda"></span></p>
+        <p><b>Lunghezza coda: </b><span id="lungCoda"></span></p>
+        <p><b>Diametro coda: </b><span id="largCoda"></span></p>
+        <p><b>Velocità massima: </b><span id="speedmax"></span></p>
+        <p><b>Resistenza massima: </b><span id="resistmax"></span></p>
+        <p><b>Forza di colpo: </b><span id="forzamax"></span></p>
+    </div>
+
+    <div class="shorter" name="wiki" id="wiki">
+        <h3>Generazione <span id="numero"></span></h3>
+        <p id="generazione"></p>
+        <h3>Drago <span id="tipo"></span></h3>
+        <p id="drago"></p>
+        <h3>Ali <span id="largtran"></span></h3>
+        <p id="ali"></p>
+        <h3>Coda <span id="lunglarg"></span></h3>
+        <p id="coda"></p>
+    </div>
+
+    <div class="shorter hidden" id="eroi">
+        <button type="button" onclick="gen()">Genera</button>
+        <p id="genitori"></p>
+        <p id="faccia"></p>
+        <p id="capelli"></p>
+        <p id="occhi"></p>
+        <p id="corporatura"></p>
+        <p id="personalita"></p>
+        <p id="genere"></p>
+    </div>
+
+    <script>
+        wiki(form)
+        measures()
+        gen()
+    </script>
+</body>
+
+</html>
