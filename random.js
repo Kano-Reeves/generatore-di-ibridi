@@ -121,7 +121,6 @@ function reroll(k, values) {
         randomGen("gen")
         gennaro = document.getElementById("gen").value
     }
-    document.getElementById("warns").innerHTML=""
 }
 
 function createValueArray(k) {
