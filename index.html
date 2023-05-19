@@ -43,6 +43,7 @@
                 <option value=3>4</option>
                 <option value=4>5</option>
             </select>
+            <button type="button" onclick="randomGen('gen'); wiki(form)">Rigenera</button>
         </p>
 
         <p>
@@ -55,6 +56,7 @@
                 <option value=4>Acido</option>
                 <option value=5>Elettrico</option>
             </select>
+            <button type="button" onclick="randomGen('dragosel'); wiki(form)">Rigenera</button>
         </p>
 
         <p>
@@ -70,6 +72,7 @@
                 <option value="60">Opache</option>
                 <option value="40">Trasparenti</option>
             </select>
+            <button type="button" onclick="randomGen('alidim'); randomGen('alitra'); wiki(form)">Rigenera</button>
         </p>
 
         <p>
@@ -85,6 +88,7 @@
                 <option value="40">Fine</option>
                 <option value="30b">Molto fine</option>
             </select>
+            <button type="button" onclick="randomGen('codalong'); randomGen('codawide'); wiki(form)">Rigenera</button>
         </p>
 
         <p>
@@ -98,6 +102,9 @@
                 <option value="6">6</option>
                 <option value="7">7</option>
             </select>
+            <button type="button" onclick="randomGenMuta('nmuta'); wiki(form)">Rigenera numero e mutazioni</button>
+            <button type="button" onclick="randomMutaz(); wiki(form)">Rigenera mutazioni</button>
+            <br><br>
             Mutazioni:
         </p>
         <p id="mutlist">

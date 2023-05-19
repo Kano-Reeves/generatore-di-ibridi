@@ -16,7 +16,7 @@ function randomIb(form) {
     randomGen("alitra")
     randomGen("codalong")
     randomGen("codawide")
-    randomGenMuta("nmuta", form)
+    randomGenMuta("nmuta")
     wiki(form)
     measures()
 }
@@ -31,7 +31,7 @@ function randomGenMuta(select) {
     x.selectedIndex = z.value
     x.value = z.value
     nmut(form)
-    setTimeout(randomMutaz(), 50)
+    randomMutaz()
 }
 
 function randomMutaz() {
@@ -121,6 +121,7 @@ function reroll(k, values) {
         randomGen("gen")
         gennaro = document.getElementById("gen").value
     }
+    document.getElementById("warns").innerHTML=""
 }
 
 function createValueArray(k) {
