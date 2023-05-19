@@ -96,7 +96,8 @@ function nmut(form) {
 }
 
 function res(form) {
-    let a = document.getElementById("tot")
+    let a = document.getElementById("warns")
+    a.innerHTML = ""
     let b = 0;
     let nmutazioni = document.getElementById("nmuta").value;
     let c;
@@ -145,7 +146,8 @@ function res(form) {
     b += mutaz * parseFloat(c);
     b += form.alidim.value * form.alitra.value;
     b += form.codalong.value * parseInt(form.codawide.value);
-    a.innerHTML = b.toFixed(2) + "<br>";
+    let cock = document.getElementById("tot")
+    cock.innerHTML = b.toFixed(2);
     if (form.gen.value == 0 || form.gen.value == 1) {
         if (form.nmuta.value > 2 && form.gen.value == 0) {
             a.innerHTML += "Combinazione illegale: inserisci un numero di mutazioni minore o uguale a 2 <br>"
@@ -172,8 +174,9 @@ function res(form) {
                 triali = true;
         }
     }
-    if (dopali && triali)
+    if (dopali && triali){
         a.innerHTML += "Combinazione illegale: doppie ali e triple ali non occorrono mai insieme<br>"
+    }
 
     let values = [];
     for (let p in k) {
@@ -183,6 +186,7 @@ function res(form) {
 
     if (hasDuplicates(values)) {
         a.innerHTML += "Combinazione illegale: Non è possibile avere la stessa mutazione due volte"
+        
     }
 }
 

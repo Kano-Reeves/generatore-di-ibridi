@@ -40,10 +40,10 @@ function randomMutaz() {
     for (i = 0; i < x.length; i++) {
         y.push(x[i])
     }
-    console.log(y)
     for (let i in y) {
         randomGenAlt(y[i])
     }
+    reroll(x, createValueArray(x))
 }
 
 function randomGenAlt(select) {
@@ -68,4 +68,66 @@ function shuffle(array) {
     }
 
     return array;
+}
+
+function reroll(k, values) {
+    while (hasDuplicates(values)) {
+        randomMutaz()
+        values = []
+        for (let p in k) {
+            if (k[p].value != undefined)
+                values.push(k[p].value)
+        }
+    }
+    let dopali = false
+    let triali = false
+    for (let p in k) {
+        //parsa a float
+        if (k[p].value != undefined) {
+            if (k[p].value == "5a")
+                dopali = true;
+            if (k[p].value == "1a")
+                triali = true;
+        }
+    }
+    while (dopali && triali) {
+        randomMutaz()
+        dopali = false
+        triali = false
+        for (let p in k) {
+            if (k[p].value != undefined) {
+                if (k[p].value == "5a")
+                    dopali = true;
+                if (k[p].value == "1a")
+                    triali = true;
+            }
+        }
+    }
+    while ((dopali || triali) && document.getElementById("gen").value <= 1) {
+        randomMutaz()
+        dopali = false
+        triali = false
+        for (let p in k) {
+            if (k[p].value != undefined) {
+                if (k[p].value == "5a")
+                    dopali = true;
+                if (k[p].value == "1a")
+                    triali = true;
+            }
+        }
+    }
+    let gennaro = document.getElementById("gen").value
+    while (gennaro <= 1 && document.getElementById("nmuta").value>=3){
+        randomGen("gen")
+        gennaro = document.getElementById("gen").value
+    }
+}
+
+function createValueArray(k) {
+    let values = [];
+    for (let p in k) {
+        if (k[p].value != undefined)
+            values.push(k[p].value)
+    }
+    return values
 }

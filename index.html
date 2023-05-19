@@ -2,6 +2,7 @@
 
 <head>
     <title>Calculatore sium</title>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js" integrity="sha512-csNcFYJniKjJxRWRV1R7fvnXrycHP6qDR21mgz1ZP55xY5d+aHLfo9/FcGDQLfn2IfngbAHd8LdfsagcCqgTcQ==" crossorigin = "anonymous" referrerpolicy = "no-referrer"> </script>
     <script src="misure.js"></script>
     <script src="script.js"></script>
     <script src="wiki.js"></script>
@@ -104,7 +105,7 @@
         </p>
     </form>
     <p><b>Rarità: </b><span id="tot"></span></p>
-
+    <p id="warns"></p>
     <button type="button" onclick="hide('misure', 'wiki', 'eroi')">Vedi info</button>
     <button type="button" onclick="hide('wiki', 'misure', 'eroi')">Vedi scheda ibrido</button>
     <button type="button" onclick="hide('wiki', 'eroi', 'misure')">Vedi eroi</button>
