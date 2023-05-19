@@ -83,6 +83,7 @@ function nmut(form) {
         b.setAttribute("onchange", "res(form)")
         b.name = "mut" + i
         b.id = "mut" + i
+        b.setAttribute("class", "field")
         let mut = mutazioni
         for (let count in mut) {
             let d = document.createElement('option')
@@ -186,7 +187,6 @@ function res(form) {
 
     if (hasDuplicates(values)) {
         a.innerHTML += "Combinazione illegale: Non è possibile avere la stessa mutazione due volte"
-        
     }
 }
 

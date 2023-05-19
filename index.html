@@ -8,6 +8,7 @@
     <script src="wiki.js"></script>
     <script src="random.js"></script>
     <script src="eroi.js"></script>
+    <script src = "save.js"></script>
     <style>
         body {
             font-family: Arial, Helvetica, sans-serif;
@@ -32,11 +33,11 @@
 </head>
 
 <body>
-    <form id="form" name="form">
+    <form id="form" name="form" class="pog">
         <button type="button" onclick="randomIb(form)">Random</button>
         <p>
             Generazione:
-            <select name="gen" id="gen" onchange="wiki(form)">
+            <select name="gen" id="gen" onchange="wiki(form)" class="field">
                 <option value=0>1</option>
                 <option value=1>2</option>
                 <option value=2>3</option>
@@ -48,7 +49,7 @@
 
         <p>
             Drago:
-            <select name="drago" id="dragosel" onchange="wiki(form)">
+            <select name="drago" id="dragosel" onchange="wiki(form)" class="field">
                 <option value=0>Comune</option>
                 <option value=1>Fuoco</option>
                 <option value=2>Veleno</option>
@@ -61,14 +62,14 @@
 
         <p>
             Ali:
-            <select name="alidim" id="alidim" onchange="wiki(form)">
+            <select name="alidim" id="alidim" onchange="wiki(form)" class="field">
                 <option value="20">Piccole</option>
                 <option value="60">Medie</option>
                 <option value="15">Grandi</option>
                 <option value="5">Molto grandi</option>
             </select>
             e
-            <select name="alitra" id="alitra" onchange="wiki(form)">
+            <select name="alitra" id="alitra" onchange="wiki(form)" class="field">
                 <option value="60">Opache</option>
                 <option value="40">Trasparenti</option>
             </select>
@@ -77,13 +78,13 @@
 
         <p>
             Coda:
-            <select name="codalong" id="codalong" onchange="wiki(form)">
+            <select name="codalong" id="codalong" onchange="wiki(form)" class="field">
                 <option value="30">Corta</option>
                 <option value="50">Lunga</option>
                 <option value="20">Molto lunga</option>
             </select>
             e
-            <select name="codawide" id="codawide" onchange="wiki(form)">
+            <select name="codawide" id="codawide" onchange="wiki(form)" class="field">
                 <option value="30">Grossa</option>
                 <option value="40">Fine</option>
                 <option value="30b">Molto fine</option>
@@ -92,7 +93,7 @@
         </p>
 
         <p>
-            <select name="nmuta" id="nmuta" onchange="wiki2(form)">
+            <select name="nmuta" id="nmuta" onchange="wiki2(form)" class="field">
                 <option value="0">0</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -113,6 +114,8 @@
     </form>
     <p><b>Rarità: </b><span id="tot"></span></p>
     <p id="warns"></p>
+    <button type="button" onclick="downloadFile()" id="dl">Scarica info</button>
+    <br><br>
     <button type="button" onclick="hide('misure', 'wiki', 'eroi')">Vedi info</button>
     <button type="button" onclick="hide('wiki', 'misure', 'eroi')">Vedi scheda ibrido</button>
     <button type="button" onclick="hide('wiki', 'eroi', 'misure')">Vedi eroi</button>
